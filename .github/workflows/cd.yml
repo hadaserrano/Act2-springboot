@@ -1,0 +1,29 @@
+name: CD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build project
+        run: mvn -B package --file pom.xml
+
+      - name: Prepare artifact for deployment
+        run: |
+          mkdir deploy
+          cp target/*.jar deploy/app.jar
+
+      - name: Simulated deploy step
+        run: echo "Aquí se desplegaría a AWS Elastic Beanstalk si tuviera credenciales"
