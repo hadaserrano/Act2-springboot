@@ -6,6 +6,7 @@ El objetivo es crear una aplicación Spring Boot y configurar un pipeline comple
 
 ## 1. Estructura del proyecto
 
+```
 Act2-springboot/
  ├── .idea/
  ├── .github/
@@ -25,7 +26,7 @@ Act2-springboot/
  ├── target/
  ├── pom.xml
  └── README.md
-
+```
 
 ## 2. Pipeline CI (Integración Continua)
 
