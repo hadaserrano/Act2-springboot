@@ -24,14 +24,12 @@ jobs:
         run: |
           mkdir deploy
           cp target/*.jar deploy/app.jar
-          cd deploy
-          zip -r app.zip app.jar
 
-      - name: Guardar ZIP como artefacto (simulación AWS)
+      - name: Guardar artefacto (simulación AWS)
         uses: actions/upload-artifact@v3
         with:
           name: app-para-aws
-          path: deploy/app.zip
+          path: deploy/app.jar
 
       - name: Simulated deploy step
-        run: echo "Aquí se desplegaría a AWS Elastic Beanstalk si tuviera credenciales"
+        run: echo "Aquí se desplegaría a AWS Elastic Beanstalk si tuvieras credenciales"
